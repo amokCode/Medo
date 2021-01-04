@@ -461,7 +461,7 @@ button.bg-danger:hover {
 }
 .text-warning,
 .dropdown-menu > li > a.text-warning {
-	color: #ffbc34 !important;
+	color: #ff4e0a !important;
 }
 .text-purple,
 .dropdown-menu > li > a.text-purple {
@@ -930,7 +930,7 @@ button.bg-danger:hover {
 	color:#e63c3c !important;
 }
 .bg-warning-light{
-	background-color:rgba(255, 152, 0,0.12) !important;
+	background:#ff4e0a1f !important;
 	color:#f39c12 !important;
 }
 .bg-success-light{
@@ -1370,7 +1370,8 @@ button.bg-danger:hover {
 -----------------------*/
 
 .header {
-	background: linear-gradient(-45deg, #3949ab, #2962ff);
+	/* background: linear-gradient(-45deg, #3949ab, #2962ff); */
+	background: #ff4e0a;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	left: 0;
 	position: fixed;
@@ -1692,10 +1693,10 @@ html.menu-opened body {
 	padding: 0 20px;
 }
 .sidebar-menu li a:hover {
-    color: #2962ff;
+    color: #ff4e0a;
 }
 .sidebar-menu > ul > li > a:hover {
-    background-color: #e2f2fe;
+    background-color: #ff4e0a1f;
     color: #000;
 }
 .sidebar-menu > ul > li.active > a:hover {
@@ -4011,4 +4012,36 @@ table.table-inbox tbody tr.checked {
 	.page-header .breadcrumb {
 		display: none;
 	}
+}
+
+.box {
+    /* background: #32af07; */
+    color: black;
+}
+.box:hover {
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    background: #ff4e0a1f;
+    /* color: white; */
+    /* -webkit-box-shadow: 0px 0px 19px 0px rgba(50, 50, 50, 0.65); */
+    /* -moz-box-shadow: 0px 0px 19px 0px rgba(50, 50, 50, 0.65); */
+    /* box-shadow: 0px 0px 12px 0px rgb(50 50 50 / 58%); */
+    /* transition-delay: 1s; */
+}
+
+.mobile_btn {
+	align-items: center;
+    color: #fff;
+    display: inline-flex;
+    float: left;
+    font-size: 30px;
+    height: 60px;
+    justify-content: center;
+    margin-left: 15px;
+    padding: 0 15px;
+}
+
+.mobile_btn:hover {
+	color: #fff;
+	cursor: pointer;
 }

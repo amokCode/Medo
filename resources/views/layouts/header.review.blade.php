@@ -16,31 +16,9 @@
     </a>
 
     <!-- Mobile Menu Toggle -->
-    <a class="mobile_btn text-light" href="{{ route('home') }}">
-        <i class="fa fa-home"></i>
-    </a>
-
-    <!-- Left icon -->
-    <a class="mobile_btn text-light">
-        <i class="fa fa-arrow-left"></i>
-    </a>
-
-    <!-- Right icon -->
-    <a class="mobile_btn text-light">
-        <i class="fa fa-arrow-right"></i>
-    </a>
-
-    {{-- <div class="top-nav-search">
-        <form>
-            <input type="text" class="form-control" placeholder="Search here">
-            <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div> --}}
-
-    <!-- Mobile Menu Toggle -->
-    {{-- <a class="mobile_btn" id="mobile_btn">
+    <a class="mobile_btn" id="mobile_btn">
         <i class="fa fa-bars"></i>
-    </a> --}}
+    </a>
     <!-- /Mobile Menu Toggle -->
 
     <!-- Header Right Menu -->
