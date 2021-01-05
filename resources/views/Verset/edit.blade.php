@@ -2,12 +2,11 @@
 
 @section('content')
 
-@include('Article.form', [$title='Modifier Article', $show=false])
+@include('Verset.form', [$title='Modifier Verset', $show=false])
 
 @endsection
 
 @section('script')
-{{-- <script src="https://cdn.ckeditor.com/4.15.1/full-all/ckeditor.js"></script> --}}
     <script>
         $('.btn-nav').click(function(e) {
             e.preventDefault();
@@ -15,7 +14,10 @@
 
             $('.contenu').load($(this).attr('href'))
         });
+    </script>
+    <script>
         CKEDITOR.replace( 'contenu' );
+        CKEDITOR.replace( 'note' );
     </script>
 @endsection
 

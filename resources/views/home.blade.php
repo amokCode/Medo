@@ -1,19 +1,50 @@
 @extends('layouts.app')
 
+@section('css')
+    <style>
+        .card-body-size {
+            min-height: 300px;
+            min-width: 300px;
+            margin-right: 5px;
+        }
+
+    </style>
+@endsection
 @section('content')
-    {{-- <div class="row">
-        <div class="col-md-12">
-            <div class="card bg-warning-light">
-                <div class="card-body">
-                    <i style="color: #ff4e0a" class="fa fa-info-circle fa-3x float-left pr-3"></i>
-                    <h4><strong class="text-dark">La solution pour retracer toutes vos missions</strong></h4>
-                    <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat non quia rem pariatur fuga odio suscipit vitae soluta consectetur ab delectus tempore quam, dolorum, aspernatur quasi! Similique a deserunt quo.</p>
+    @php
+        $colors = ["#0a55ff", "#ff4e0a", "#1bd43b", "#ff0000"];
+        $i = 0;
+
+        $categories = App\Categorie::all();
+        $versets = App\Verset::all();
+    @endphp
+
+    <h3 class="pb-3">
+        <strong class="text-dark">
+            <i style="color: #ff4e0a" class="fa fa-hashtag"></i> Section <span class="text-warning">Catégories</span>
+        </strong>
+    </h3>
+    <div class="d-flex flex-row flex-nowrap overflow-auto mb-4">
+        @foreach ($categories as $categorie)
+            <a href="{{ route('categorie.show', $categorie->id) }}" class="mr-2">
+                <div class="card box">
+                    <div class="card-body-size">
+                        <div class="rosw m-4">
+                            <h4>{{ $categorie->nom }}</h4>
+                            <p class="card-tedxt">{{ $categorie->description }}.
+                            </p>
+                            <span class="btn btn-primary"><i class="fa fa-folder-open"></i> Consulter</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div> --}}
-    
-    <h3 class="pb-3"><strong class="text-dark"><i style="color: #ff4e0a" class="fa fa-hashtag "></i> Section <span class="text-warning">Article</span></strong></h3>
+            </a>
+        @endforeach
+
+        {{-- @endfor --}}
+    </div>
+
+    <h3 class="pb-3"><strong class="text-dark"><i style="color: #ff4e0a" class="fa fa-hashtag "></i> Section <span
+                class="text-warning">Articles</span></strong></h3>
     <div class="row">
         <div class="col-md-6">
             <a href="#">
@@ -52,36 +83,59 @@
     </div>
 
     {{-- Section Plan de Lecture --}}
-    <h3 class="pb-3"><strong class="text-dark"><i style="color: #ff4e0a" class="fa fa-hashtag "></i> Section <span class="text-warning">Plan de Lecture</span></strong></h3>
+    <h3 class="pb-3"><strong class="text-dark"><i style="color: #ff4e0a" class="fa fa-hashtag "></i> Section <span
+                class="text-warning">Plan de Lecture</span></strong></h3>
     <div class="row">
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <a href="#">
                 <div class="card box">
                     <div class="card-body">
                         <div class="row m-3">
-                            {{-- <div class="col-md-12 text-center">
-                                <h1><i style="color: #ff4e0a" class="fa fa-file-text-o fa-2x mb-3"></i></h1>
-                            </div>
-                            <div class="col-md-12 text-center"> --}}
-                                <h4 class="col-md-12">Verset 1: Gn 4.2-6.3 <a href="#" class="btn btn-sm bg-success-light text-success pull-right"><i class="fa fa-address-book"></i> Ouvrir</a></h4>
-                                <h4 class="col-md-12">Verset 2: Gn 4.2-6.3 <a href="#" class="btn btn-sm bg-success-light text-success pull-right"><i class="fa fa-address-book"></i> Ouvrir</a></h4>
-                                <h4 class="col-md-12">Verset 3: Gn 4.2-6.3 <a href="#" class="btn btn-sm bg-success-light text-success pull-right"><i class="fa fa-address-book"></i> Ouvrir</a></h4>
-                                <h4 class="col-md-12">Verset 4: Gn 4.2-6.3 <a href="#" class="btn btn-sm bg-success-light text-success pull-right"><i class="fa fa-address-book"></i> Ouvrir</a></h4>
-                                {{-- <strong>Nouvel Article</strong><br>
-                                {{-- <span>Vous verrez ici le formulaire de création d'un article</span> --}}
-                            {{-- </div> --}}
+                            <h4 class="col-md-12"><span class="text-dark">Verset 1: Gn 4.2-6.3 </span><a href="#"
+                                    class="btn btn-sm bg-success-light text-success pull-right"><i
+                                        class="fa fa-address-book"></i> Ouvrir</a></h4>
+                            <h4 class="col-md-12">Verset 2: Gn 4.2-6.3 <a href="#"
+                                    class="btn btn-sm bg-success-light text-success pull-right"><i
+                                        class="fa fa-address-book"></i> Ouvrir</a></h4>
+                            <h4 class="col-md-12">Verset 3: Gn 4.2-6.3 <a href="#"
+                                    class="btn btn-sm bg-success-light text-success pull-right"><i
+                                        class="fa fa-address-book"></i> Ouvrir</a></h4>
+                            <h4 class="col-md-12">Verset 4: Gn 4.2-6.3 <a href="#"
+                                    class="btn btn-sm bg-success-light text-success pull-right"><i
+                                        class="fa fa-address-book"></i> Ouvrir</a></h4>
                         </div>
                     </div>
-                </div>
             </a>
-        </div>
-        <div class="col-md-6">
+        </div> --}}
+
+        @foreach ($versets as $verset)
+            <div class="col-md-3">
+                <a href="{{ route('verset.show', $verset->id) }}">
+                    <div class="card box">
+                        <div class="card-body">
+                            <div class="row m-3">
+                                <div class="col-md-12 text-center">
+                                    <h1><i style="color: {{ $colors[$i] }}" class="fa fa-align-left fa-2x mb-3"></i></h1>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <strong>Verset {{ ++$i }}</strong><br>
+                                    <span>{{ $verset->nom }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{-- @php $i++; @endphp --}}
+        @endforeach
+
+        {{-- <div class="col-md-3">
             <a href="#">
                 <div class="card box">
                     <div class="card-body">
                         <div class="row m-3">
                             <div class="col-md-12 text-center">
-                                <h1><i style="color: #ff4e0a" class="fa fa-file-text fa-2x mb-3"></i></h1>
+                                <h1><i style="color: #ff4e0a" class="fa fa-align-left fa-2x mb-3"></i></h1>
                             </div>
                             <div class="col-md-12 text-center">
                                 <strong>Liste des Articles</strong><br>
@@ -92,5 +146,39 @@
                 </div>
             </a>
         </div>
+        <div class="col-md-3">
+            <a href="#">
+                <div class="card box">
+                    <div class="card-body">
+                        <div class="row m-3">
+                            <div class="col-md-12 text-center">
+                                <h1><i style="color: #1bd43b" class="fa fa-align-left fa-2x mb-3"></i></h1>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <strong>Liste des Articles</strong><br>
+                                <span>Vous verrez ici la liste de tous vos articles enrégistrées</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#">
+                <div class="card box">
+                    <div class="card-body">
+                        <div class="row m-3">
+                            <div class="col-md-12 text-center">
+                                <h1><i style="color: #ff0000" class="fa fa-align-left fa-2x mb-3"></i></h1>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <strong>Liste des Articles</strong><br>
+                                <span>Vous verrez ici la liste de tous vos articles enrégistrées</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div> --}}
     </div>
 @endsection

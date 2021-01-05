@@ -28,17 +28,17 @@
         <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
 
         @yield('css')
-    <style>
-        .subdrop {
-            font-weight: bold !important;
-        }
-        /* .form-check-input {
-            cursor: pointer
-        } */
-        input[type=checkbox], input[type=radio] {
-            cursor: pointer
-        }
-    </style>
+        <style>
+            .subdrop {
+                font-weight: bold !important;
+            }
+            /* .form-check-input {
+                cursor: pointer
+            } */
+            input[type=checkbox], input[type=radio] {
+                cursor: pointer
+            }
+        </style>
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
 			<script src="assets/js/respond.min.js"></script>
@@ -84,6 +84,9 @@
         <!-- Toastr JS -->
         <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
         {!! Toastr::message() !!}
+
+        {{-- Ckeditor JS --}}
+        <script src="https://cdn.ckeditor.com/4.15.1/full-all/ckeditor.js"></script>
 
         <!-- Excel bootstrap table filter JS -->
         <script src="{{ asset('assets/js/excel-bootstrap-table-filter-bundle.min.js') }}"></script>

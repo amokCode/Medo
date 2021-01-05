@@ -17,17 +17,22 @@
 
     <!-- Mobile Menu Toggle -->
     <a class="mobile_btn text-light" href="{{ route('home') }}">
-        <i class="fa fa-home"></i>
+        <i class="fe fe-home"></i>
     </a>
 
     <!-- Left icon -->
     <a class="mobile_btn text-light">
-        <i class="fa fa-arrow-left"></i>
+        <i class="fe fe-arrow-left"></i>
     </a>
 
     <!-- Right icon -->
     <a class="mobile_btn text-light">
-        <i class="fa fa-arrow-right"></i>
+        <i class="fe fe-arrow-right"></i>
+    </a>
+
+    <!-- Refresh icon -->
+    <a class="mobile_btn text-light" href="">
+        <i class="fa fa-refresh"></i>
     </a>
 
     {{-- <div class="top-nav-search">

@@ -17,6 +17,7 @@ class CreateVersetsTable extends Migration
             $table->id();
             $table->string('nom');
             $table->string('date');
+            $table->text('contenu')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();
         });
