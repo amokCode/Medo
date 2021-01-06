@@ -12,7 +12,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label> Verset du jour:</label>
-                                <input class="form-control" type="search" placeholder="Exp: Prov 2.3-5" required name="nom" value="{{ $verset->nom ?? old('nom') }}" {{ ($show) ? 'disabled' : ''}}>
+                                <input class="form-control capitalize" type="search" placeholder="Exp: Prov 2.3-5" required name="nom" value="{{ $verset->nom ?? old('nom') }}" {{ ($show) ? 'disabled' : ''}}>
                                 {{-- @error('')
                                     <span class="invalid-feedback">
                                         {{ $errors->first('') }}
@@ -25,7 +25,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label> Pour le:</label>
-                                <input class="form-control" type="date" placeholder="Exp: Jeu 15 Dec 2021" required name="date" value="{{ $verset->date ?? old('date') }}" {{ ($show) ? 'disabled' : ''}}>
+                                <input class="form-control" type="date" placeholder="Exp: Jeu 15 Dec 2021" required name="date" value="{{ $verset->date ?? Carbon\Carbon::now()->toDateString() }}" {{ ($show) ? 'disabled' : ''}}>
                                 {{-- @error('')
                                     <span class="invalid-feedback">
                                         {{ $errors->first('') }}

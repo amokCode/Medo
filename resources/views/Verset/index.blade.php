@@ -4,7 +4,12 @@
     <link rel="stylesheet" href="{{ asset('assets/css/excel-bootstrap-table-filter-style.css') }}">
 @endsection
 
+
+
 @section('content')
+@php
+    $today = Carbon\Carbon::now()->toDateString();
+@endphp
     <div class="row">
         <div class="col-sm-12">
             @include('Verset.delete_modal')
@@ -59,7 +64,9 @@
                                         <td data-id="{{ $verset->id }}">#{{ $loop->index + 1 }}</td>
                                         {{-- <td>{{ $car->nom }}</td> --}}
                                         <td>{{ $verset->nom }}</td>
-							            <td>{{ $verset->date }}</td>
+							            <td>
+                                            <span class="{{ ($verset->date == $today)? "bg-success text-light px-1":"" }}">{{ $verset->date }}</span>
+                                        </td>
 							            <td>{{ substr($verset->note, 0, 10) }}</td>
 
                                         <td>

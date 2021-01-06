@@ -16,7 +16,10 @@
         $i = 0;
 
         $categories = App\Categorie::all();
-        $versets = App\Verset::all();
+
+        $today = Carbon\Carbon::now()->toDateString();
+
+        $versets = App\Verset::where('date', $today)->get();
     @endphp
 
     <h3 class="pb-3">
@@ -110,7 +113,7 @@
 
         @foreach ($versets as $verset)
             <div class="col-md-3">
-                <a href="{{ route('verset.show', $verset->id) }}">
+                <a href="{{ route('verset.show', $verset->id) }}" class="item-nav">
                     <div class="card box">
                         <div class="card-body">
                             <div class="row m-3">
